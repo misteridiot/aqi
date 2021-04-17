@@ -36,6 +36,7 @@ while True:
                'gt50um': rcv[24] * 256 + rcv[25],
                'gt100um': rcv[26] * 256 + rcv[27]
                }
+        display.print(res['pm25'])
         print('===============\n'
                'PM1.0(CF=1): {}\n'
                'PM2.5(CF=1): {}\n'
