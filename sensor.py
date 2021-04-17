@@ -1,7 +1,12 @@
 import serial
 import datetime
+import board
+from adafruit_ht16k33.segments import Seg7x4
 
 port = serial.Serial('/dev/ttyAMA0', baudrate=9600, timeout=2.0)
+i2c = board.I2C()
+display = Seg7x4(i2c)
+display.brightness = 0.5
 
 def read_pm_line(_port):
     rv = b''
@@ -44,7 +49,7 @@ while True:
                '>2.5um     : {}\n'
                '>5.0um     : {}\n'
                '>10um      : {}'.format(res['apm10'], res['apm25'], res['apm100'],
-                                        res['pm10'], res['apm25'], res['pm100'],
+                                        res['pm10'], res['pm25'], res['pm100'],
                                         res['gt03um'], res['gt05um'], res['gt10um'],
                                         res['gt25um'], res['gt50um'], res['gt100um']))
 

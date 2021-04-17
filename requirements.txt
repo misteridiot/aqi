@@ -1,3 +1,8 @@
 requests==2.24.0
 python_aqi==0.6.1
 pyserial==3.5
+
+adafruit-circuitpython-ht16k33
+python3-pil
+python3-smbus
+i2c-tools
