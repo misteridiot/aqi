@@ -36,7 +36,7 @@ while True:
                'gt50um': rcv[24] * 256 + rcv[25],
                'gt100um': rcv[26] * 256 + rcv[27]
                }
-        output_string=res['pm25'].zfill(4)
+        output_string=str(res['pm25']).zfill(4)
         display.print(output_string)
         print('===============\n'
                'PM1.0(CF=1): {}\n'
